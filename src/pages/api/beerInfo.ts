@@ -1,10 +1,81 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { BeerItem } from 'src/models/beer'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { BeerItem } from 'src/models/common';
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<BeerItem[]>
 ) {
-  res.status(200).json([{ beerImage: "/image", beerName: "IPA", description: "美味しいよ" }])
+  res.status(200).json([
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+    {
+      title: 'ねこにひき',
+      imagePath: '/assets/dummy/dummyBeer.png',
+      beerStyle: 'ペールエール',
+      brewery: '伊勢角谷麦酒',
+      description: '優しい香りが特徴',
+    },
+  ]);
 }
