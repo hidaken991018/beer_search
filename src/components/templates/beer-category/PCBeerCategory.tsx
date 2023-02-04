@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import PCBeerCard from "src/components/molecules/beer-card/PCBeerCard"
 import PCHeader from "src/components/molecules/header/PCHeader"
 import { getBeerInfo } from "src/libs/api/getBeerInfo"
-import { BeerItem } from "src/models/beer"
+import { BeerItem } from "src/models/common"
 
 const PCBeerCategory = () => {
 
-  const [beerItems, setBeerItems] = useState<BeerItem[]>([]);
+  const [beerItems, setBeerItems] = useState<any[]>([]);
   const getInfo = async () => {
     const beerInfo: BeerItem[] = await (await getBeerInfo()).data
     setBeerItems(beerInfo)
@@ -19,7 +19,7 @@ const PCBeerCategory = () => {
   return (
     <>
       <PCHeader />
-      {beerItems.map((item: BeerItem, index) => {
+      {beerItems.map((item: any, index) => {
         return (
           <div key={index}>
             <PCBeerCard

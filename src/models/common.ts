@@ -4,7 +4,7 @@ export type NavLink = {
 };
 
 export type BeerItem = {
-  title: string;
+  name: string;
   imagePath: string;
   beerStyle: string;
   brewery: string;
