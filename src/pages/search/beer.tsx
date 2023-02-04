@@ -5,13 +5,13 @@ import { BeerCard } from "src/components/ui/BeerCard";
 import { getBeerInfo } from "src/libs/api/getBeerInfo";
 import { BeerItem } from "src/models/common";
 import { BeerFilter } from "src/components/ui/BeerFilter";
+import { supabase } from "src/utils/supabaseClient";
 
 
 
 const Beer = () => {
 
-
-  const [beerItems, setBeerItems] = useState<BeerItem[]>([])
+  const [beerItems, setBeerItems] = useState<any[]>([])
   const [isReady, setIsReady] = useState<boolean>(false)
 
   const body = css({
@@ -33,22 +33,45 @@ const Beer = () => {
     flexWrap: "wrap",
   })
 
-  const getBeerItems = async () => {
-    return await (await getBeerInfo()).data
+  /**
+   * ビール情報取得
+   * @returns 
+   */
+  // const getBeerItems = async () => {
+  //   return await (await getBeerInfo()).data
+  // }
+
+  /**
+   * ビール情報セット
+   * @returns 
+   */
+  // const concatGetDate = async () => {
+  //   let beerItems = await getBeerItems()
+  //   if (!beerItems) {
+  //     setIsReady(true)
+  //     return
+  //   }
+  //   setBeerItems(beerItems);
+  //   setIsReady(true)
+  // };
+
+  const getBeerInfo = async () => {
+    try {
+      const { data, error } = await supabase.from("beer").select("*");
+      if (data) setBeerItems(data)
+      if (error) throw error;
+      console.log(error)
+    } catch (error: any) {
+      console.log(error)
+    }
   }
 
-  const concatGetDate = async () => {
-    let beerItems = await getBeerItems()
-    if (!beerItems) {
-      setIsReady(true)
-      return
-    }
-    setBeerItems(beerItems);
-    setIsReady(true)
-  };
-
+  /**
+   * 初回レンダリング時
+   */
   useEffect(() => {
-    concatGetDate()
+    // concatGetDate()
+    getBeerInfo()
   }, [])
 
   useEffect(() => {
@@ -65,9 +88,9 @@ const Beer = () => {
             <div css={beerItemsWrapper}>
               {beerItems.map((item, index) => (
                 <BeerCard
-                  title={item.title}
-                  imagePath={item.imagePath}
-                  beerStyle={item.beerStyle}
+                  title={item.name}
+                  imagePath={item.image_url}
+                  beerStyle={item.style}
                   brewery={item.brewery}
                   description={item.description}
                   key={index} />

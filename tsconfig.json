@@ -16,6 +16,6 @@
     "incremental": true,
     "baseUrl": ".",
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/supabaseClient.js", "src/utils/supabaseClient.js"],
   "exclude": ["node_modules"]
 }
