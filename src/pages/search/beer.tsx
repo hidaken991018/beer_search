@@ -58,7 +58,10 @@ const Beer = () => {
   const getBeerInfo = async () => {
     try {
       const { data, error } = await supabase.from("beer").select("*");
-      if (data) setBeerItems(data)
+      if (data) {
+        setBeerItems(data)
+        setIsReady(true)
+      }
       if (error) throw error;
       console.log(error)
     } catch (error: any) {
