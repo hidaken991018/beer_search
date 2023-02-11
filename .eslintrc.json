@@ -4,3 +4,97 @@
         "next/core-web-vitals"
     ]
 }
+// 新映像
+// {
+//     "extends": ["next/core-web-vitals", "plugin:import/recommended"],
+//     "plugins": ["@limegrass/import-alias", "import", "unused-imports"],
+//     "rules": {
+//       "@typescript-eslint/no-unused-vars": "off",
+//       "import/order": [
+//         "warn",
+//         {
+//           "groups": [
+//             "builtin", // 組み込みモジュール
+//             "external", // npmでインストールした外部ライブラリ
+//             "internal", // 自作モジュール
+//             ["parent", "sibling"],
+//             "object",
+//             "type",
+//             "index"
+//           ],
+//           "newlines-between": "always", // グループ毎にで改行を入れる
+//           "pathGroupsExcludedImportTypes": ["builtin"],
+//           "alphabetize": {
+//             "order": "asc", // 昇順にソート
+//             "caseInsensitive": true // 小文字大文字を区別する
+//           },
+//           "pathGroups": [
+//             // 特定のパスのグループ化
+//             {
+//               "pattern": "react**",
+//               "group": "external",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "next",
+//               "group": "external",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "next/**",
+//               "group": "external",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "recoil",
+//               "group": "external",
+//               "position": "before"
+//             },
+//             { "pattern": "@atoms/**", "group": "internal", "position": "before" },
+//             {
+//               "pattern": "@molecules/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "@organisms/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "@templates/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "@guards/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             { "pattern": "@libs/**", "group": "internal", "position": "before" },
+//             {
+//               "pattern": "@models/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             { "pattern": "@pages/**", "group": "internal", "position": "before" },
+//             { "pattern": "@store/**", "group": "internal", "position": "before" },
+//             { "pattern": "@utils/**", "group": "internal", "position": "before" },
+//             {
+//               "pattern": "@consts/**",
+//               "group": "internal",
+//               "position": "before"
+//             },
+//             {
+//               "pattern": "@styles/**",
+//               "group": "internal",
+//               "position": "before"
+//             }
+//           ]
+//         }
+//       ],
+//       "import/no-named-as-default": "off",
+//       "unused-imports/no-unused-imports": "warn",
+//       "@limegrass/import-alias/import-alias": "warn"
+//     }
+//   }

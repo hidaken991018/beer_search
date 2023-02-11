@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "cross-env NODE_OPTIONS='--inspect=0.0.0.0:9229' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx src",
@@ -23,6 +24,7 @@
     "@supabase/supabase-js": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "axios": "^1.2.1",
+    "cross-env": "^7.0.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "graphql": "^16.6.0",
