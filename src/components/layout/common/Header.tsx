@@ -1,66 +1,52 @@
 /** @jsxImportSource @emotion/react */
 
-import { css } from "@emotion/react";
-import Image from 'next/image';
+import { css } from '@emotion/react';
 import Link from 'next/link';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { NavLink } from "src/models/common";
-import { Logo } from "src/components/atoms/Logo";
-
-
+import { Logo } from 'src/components/atoms/Logo';
+import { NAVI_LINKS } from 'src/utils/constants';
 
 export const Header = () => {
   const header = css({
-    display: "flex",
-    justifyContent: "space-around",
-    width: "100vw",
-    height: "70px",
-    backgroundColor: "black",
-    position: "absolute",
-    top: "0"
+    display: 'flex',
+    justifyContent: 'space-around',
+    width: '100%',
+    height: '70px',
+    backgroundColor: 'black',
+    top: '0',
   });
 
   const nav = css({
-    display: "flex",
+    display: 'flex',
   });
 
   const navText = css({
-    fontSize: "14px",
+    fontSize: '14px',
     color: 'white',
-    margin: "8px 35px auto 0px",
+    margin: '8px 35px auto 0px',
   });
 
   const iconWrapper = css({
-    margin: " 16px 0px"
+    margin: ' 16px 0px',
   });
 
   const icon = css({
-    margin: "0px 10px"
-  })
+    margin: '0px 10px',
+  });
 
-  const navLinks: NavLink[] = [
-    { name: "ホーム", link: "/" },
-    { name: "おすすめ", link: "/recommend" },
-    { name: "店舗を探す", link: "/search/shop" },
-    { name: "ビールを探す", link: "/search/beer" },
-    { name: "商品情報登録", link: "/register/beer" },
-    { name: "店舗情報登録", link: "/register/shop" },
-  ]
   return (
     <div css={header}>
-      <div css={""} style={{ marginTop: "20px" }}>
+      <div css={''} style={{ marginTop: '20px' }}>
         <Link href="/">
-          <a>
-            <Logo />
-          </a>
+          <Logo />
         </Link>
       </div>
-      <nav >
+      <nav>
         <ul css={nav}>
-          {navLinks.map((navLink, index) => (
+          {NAVI_LINKS.map((navLink, index) => (
             <li key={index}>
-              <Link href={navLink.link} >
+              <Link href={navLink.link}>
                 <a>
                   <p css={navText}>{navLink.name}</p>
                 </a>
@@ -70,17 +56,17 @@ export const Header = () => {
         </ul>
       </nav>
       <div style={{ color: 'white' }} css={iconWrapper}>
-        <Link href="##1" >
+        <Link href="##1">
           <a>
-            <PersonIcon color='inherit' css={icon} />
+            <PersonIcon color="inherit" css={icon} />
           </a>
         </Link>
         <Link href="##2">
           <a>
-            <ShoppingCartIcon color='inherit' css={icon} />
+            <ShoppingCartIcon color="inherit" css={icon} />
           </a>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
