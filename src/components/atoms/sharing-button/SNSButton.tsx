@@ -1,21 +1,28 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
-    iconImagePath: string;
-    linkUrl:string;
-}
+  iconImagePath: string;
+  linkUrl: string;
+};
 
-export const TwitterShare = (props: Props) => {
-    const { iconImagePath, linkUrl} = props;
+/**
+ * SNSシェアボタン
+ * @param props
+ * @returns
+ */
+export const SNSButton = (props: Props) => {
+  const { iconImagePath, linkUrl } = props;
 
-    // const shareToSNS = `https://twitter.com/share?url=${shareUrl}&text=${shareText}&hashtag=${shareHashtag}`
-    return<>
-    {/* TODO Twitter画像 */}
-    <Link href={linkUrl}>
-        <a target={"_blank"}>
-            <Image src={iconImagePath} alt="" layout="fill"/>
+  // const shareToSNS = `https://twitter.com/share?url=${shareUrl}&text=${shareText}&hashtag=${shareHashtag}`
+  return (
+    <>
+      {/* TODO Twitter画像 */}
+      <Link href={linkUrl}>
+        <a target={'_blank'}>
+          <Image src={iconImagePath} alt="" layout="fill" />
         </a>
-    </Link>
+      </Link>
     </>
-}
+  );
+};
