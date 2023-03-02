@@ -7,6 +7,11 @@ type Props = {
   selector: string[];
 };
 
+/**
+ * セレクトボタン群(複数選択可)
+ * @param props
+ * @returns
+ */
 export const Selector = (props: Props) => {
   const { selector } = props;
   const [formats, setFormats] = useState<string[]>(() => ['']);
