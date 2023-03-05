@@ -39,7 +39,10 @@ export const SideBar: () => JSX.Element = () => {
         {/* ロゴ */}
         <div className="max-w-5xl mx-auto pt-5 pl-5">
           <Link href="/">
-            <Logo />
+            <>
+              {/*フラグメント理由：warning削除目的 https://github.com/vercel/next.js/issues/7915#issuecomment-514864334%20 */}
+              <Logo />
+            </>
           </Link>
         </div>
         <List>

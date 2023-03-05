@@ -39,7 +39,10 @@ export const Header = () => {
     <div css={header}>
       <div css={''} style={{ marginTop: '20px' }}>
         <Link href="/">
-          <Logo />
+          <>
+            {/*フラグメント理由：warning削除目的 https://github.com/vercel/next.js/issues/7915#issuecomment-514864334%20 */}
+            <Logo />
+          </>
         </Link>
       </div>
       <nav>

@@ -53,7 +53,10 @@ export const Footer = () => {
         <div css={navWrapper}>
           <div css={''} style={{ marginTop: '30px' }}>
             <Link href="/">
-              <Logo />
+              <>
+                {/*フラグメント理由：warning削除目的 https://github.com/vercel/next.js/issues/7915#issuecomment-514864334%20 */}
+                <Logo />
+              </>
             </Link>
           </div>
           <div style={{ display: 'flex' }}>
